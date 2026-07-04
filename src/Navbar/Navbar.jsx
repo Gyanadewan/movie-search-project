@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
-function Navbar() {
+function Navbar({search,setSearch}) {
   const [open,setOpen] = useState(false)
   return (
     <nav className="bg-gray-900 text-white shadow-md relative">
@@ -52,6 +52,8 @@ function Navbar() {
           <input
             type="text"
             placeholder="Search movies..."
+            value={search}
+            onChange={(e)=>setSearch(e.target.value)}
             className=" px-2 md:px-4 py-1 md:py-2 rounded-l-md text-white outline-none"
           />
 
